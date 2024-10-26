@@ -33,6 +33,14 @@ namespace TLab.Android.WebView
             }
         }
 
-        public void AddKey(string key) => m_webview.KeyEvent(key.ToCharArray()[0]);
+        public void AddKey(string key)
+        {
+            m_webview.KeyEvent(key.ToCharArray()[0]);
+        }
+
+        public void UpArroww()
+        {
+            m_webview.UpArrow();
+        }
     }
 }

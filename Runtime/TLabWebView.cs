@@ -947,15 +947,31 @@ namespace TLab.Android.WebView
 #endif
 		}
 
-		//
-		// Cache
-		//
+        /// <summary>
+        /// Dispatch of an up arrow key event.
+        /// </summary>
+        public void UpArrow()
+        {
+            if (m_state != State.INITIALIZED)
+            {
+                return;
+            }
 
-		/// <summary>
-		/// Clear WebView Cache.
-		/// </summary>
-		/// <param name="includeDiskFiles">If false, only the RAM cache will be cleared</param>
-		public void ClearCache(bool includeDiskFiles)
+#if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
+    // Pass the Android keycode for the Up Arrow (DPAD Up)
+    m_NativePlugin.Call("keyEvent", 19); // 19 is KeyEvent.KEYCODE_DPAD_UP
+#endif
+        }
+
+        //
+        // Cache
+        //
+
+        /// <summary>
+        /// Clear WebView Cache.
+        /// </summary>
+        /// <param name="includeDiskFiles">If false, only the RAM cache will be cleared</param>
+        public void ClearCache(bool includeDiskFiles)
 		{
 #if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
 			m_NativePlugin.Call("clearCash", includeDiskFiles);
