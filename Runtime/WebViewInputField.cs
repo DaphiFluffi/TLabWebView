@@ -16,9 +16,16 @@ namespace TLab.Android.WebView
 
         public override void OnSpacePressed() => AddKey(" ");
 
-        public override void OnTabPressed() => AddKey("\t");
+        public override void OnTabPressed() => m_webview.TabKey();
 
         public override void OnKeyPressed(string input) => AddKey(input);
+
+        public override void OnUpArrowPressed() => m_webview.UpArrow();
+
+        public override void OnDownArrowPressed() => m_webview.DownArrow();
+        public override void OnLeftArrowPressed() => m_webview.LeftArrow();
+        public override void OnRightArrowPressed() => m_webview.RightArrow();
+
 
         #endregion KEY_EVENT
 

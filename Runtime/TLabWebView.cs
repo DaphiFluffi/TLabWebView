@@ -958,8 +958,55 @@ namespace TLab.Android.WebView
             }
 
 #if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
-    // Pass the Android keycode for the Up Arrow (DPAD Up)
-    m_NativePlugin.Call("keyEvent", 19); // 19 is KeyEvent.KEYCODE_DPAD_UP
+    m_NativePlugin.Call("upArrowKey");
+#endif
+        }
+
+        public void DownArrow()
+        {
+            if (m_state != State.INITIALIZED)
+            {
+                return;
+            }
+
+#if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
+    m_NativePlugin.Call("downArrowKey");
+#endif
+        }
+
+        public void LeftArrow()
+        {
+            if (m_state != State.INITIALIZED)
+            {
+                return;
+            }
+
+#if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
+    m_NativePlugin.Call("leftArrowKey");
+#endif
+        }
+
+        public void RightArrow()
+        {
+            if (m_state != State.INITIALIZED)
+            {
+                return;
+            }
+
+#if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
+    m_NativePlugin.Call("rightArrowKey");
+#endif
+        }
+
+        public void TabKey()
+        {
+            if (m_state != State.INITIALIZED)
+            {
+                return;
+            }
+
+#if UNITY_ANDROID && !UNITY_EDITOR || DEBUG
+    m_NativePlugin.Call("tabKey");
 #endif
         }
 
