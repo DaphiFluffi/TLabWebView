@@ -1,5 +1,6 @@
 using UnityEngine;
 using TLab.VKeyborad;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace TLab.Android.WebView
 {
@@ -16,7 +17,10 @@ namespace TLab.Android.WebView
 
         public override void OnSpacePressed() => AddKey(" ");
 
-        public override void OnTabPressed() => m_webview.TabKey();
+        public override void OnTabPressed()
+        {
+            return;
+        }
 
         public override void OnKeyPressed(string input) => AddKey(input);
 
