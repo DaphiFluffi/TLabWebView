@@ -19,7 +19,10 @@ namespace TLab.Android.WebView
 
         public override void OnTabPressed()
         {
-            return;
+            for (int i = 0; i < 4; i++)
+            {
+                AddKey(" ");
+            }
         }
 
         public override void OnKeyPressed(string input) => AddKey(input);
